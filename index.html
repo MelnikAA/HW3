@@ -5,82 +5,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Формы</title>
-    
-    <script src="js/index.js"></script>
-    <script src="js/send-data.js"></script>
-    
+    <script src="js/send-data.js"></script>  
 </head>
 <body>
-    <form class="flex-column" id="applicant-form" name="applicantForm" action="#">
+    <form action="#" class="flex-column" id="applicantForm" name="applicant-form" action="#">
         <h2>Арестантская анкета</h2>
-        <h3>Надеюсь, не слишком? просто эта идее  показалась мне забавной◑﹏◐</h3>
-
         <label>
-            Имя:
-            <input value="Имя" name="firstname" pattern="^[А-Я][а-я]{2,}$" required>
+            <input 
+                type = "text"
+                placeholder="Имя" 
+                name="firstname"
+                id = "firstname" 
+                data-reg="^[А-Я][а-я]{2,}$" 
+                required>
         </label>
         <label for="lastName">
-            Фамилия:
-            <input value="Фамилия" name="lastname" pattern="^[А-Я][а-я]{2,}$" required>
+            <input 
+                type = "text"
+                placeholder="Фамилия" 
+                name="lastname" 
+                id="lastname"
+                data-reg="^[А-Я][а-я]{2,}$" 
+                required>
         </label>
-        <fieldset name="gender" class="flex-column">
+        <p>Используйте русские буквы.</p>
+        <fieldset 
+            name="gender" 
+            class="flex-column">
         <legend>Выберите пол:</legend>
             <label>
-                <input name="gender" value="муж" type="radio" checked required>
+                <input 
+                name="gender" 
+                value="муж" 
+                type="radio" 
+                checked 
+                required>
                 муж.
             </label>
             <label>
-                <input name="gender" value="жен" type="radio" required>
+                <input 
+                name="gender" 
+                value="жен" 
+                type="radio" 
+                required>
                 жен.
             </label>
         </fieldset>
         <label for="age">
             Возраст:
-            <input name="age" type="number" min="15" max="99">
+            <input 
+            name="age" 
+            type="number" 
+            data-reg="^(?:1[01][0-9]|120|1[3-9]|[2-9][0-9])$"
+            >
         </label>
         <label for="year">
             Сколько лет дали?
-            <input name="year" type="number" min="1" max="99">
+            <input 
+            name="year" 
+            type="number" 
+            data-reg="^(?:|[1-9]|1[1-9]|[2-9][0-9])$">
         </label>
         
-        <select name="profile">
+        <select name="profile" id = "profile">
             <option value="">Выберите масть</option>
             <option value="Блатной">Блатной</option>
             <option value="Мужик">Мужик</option>
             <option value="Красный">Красный</option>
-            <option value="Черт">Черт</option>
+            <option value="chert">Черт</option>
           </select>
-          <div id="error"></div>
+          <span id="error"></span>
         <div class="flex-row">
             <fieldset class="flex-column">
                 <legend>Чем будешь заниматься в свободное время?</legend>
                 <label>
-                    <input name="hobby" value="Качалка" type="checkbox">
+                    <input 
+                    name="hobby" 
+                    value="Качалка" 
+                    type="checkbox">
                     Качалка
                 </label>
                 <label>
-                    <input name="hobby" value="Библиотека" type="checkbox">
+                    <input 
+                    name="hobby" 
+                    value="Библиотека" 
+                    type="checkbox">
                     Библиотека
                 </label>
                 <label>
-                    <input name="hobby" value="Резка по дереву" type="checkbox">
+                    <input 
+                    name="hobby" 
+                    value="Резка по дереву" 
+                    type="checkbox">
                     Резка по дереву
                 </label>
-            </fieldset>
-            
+            </fieldset>   
         </div>
         <label for="comment">Как так получилось, арестант?</label>
-        <textarea id="comment" name="comment"></textarea>
+        <textarea  
+            placeholder="Пришёл я, значит, на курсы от theWhiteSoft" 
+            id="comment" 
+            name="comment">
+        </textarea>
         <p id="comment-words-counter"></p>
-        <p id="sended-data"></p>
+        
         <label>
         <input type="checkbox" required>
         Согласен с УК РФ
          </label>
-        <button id="applicantFormSubmit" class="submit">
+        <button 
+            id="applicantFormSubmit" 
+            name = "applicantFormSubmit"
+            class="submit">
             Отправить
         </button>
     </form>
     <a href="table.html">Анкеты арестантов</a>
+    <script src="js/validate.js"></script>
 </body>
 </html>
