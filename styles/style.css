@@ -1,0 +1,14 @@
+.main_table {
+    width: 50%;
+    margin: 30px;
+    text-align: center;
+    border: 2px solid #3a1c65;
+}
+.main_table td{
+    border: 2px solid #3a1c65;
+}
+
+.table_title tr{
+    background: #000000;
+    color: #fff;
+}
